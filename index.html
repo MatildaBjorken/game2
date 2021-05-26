@@ -1,0 +1,106 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./game.css" />
+  </head>
+  <body>
+    <!---->
+    <div id="loader" class="center load">
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+    </div>
+    <iframe
+      name="testIframe"
+      id="testiframe"
+      src="https://my.spline.design/newrace-3f1518534232968b33fcb7254a3b398b/"
+      frameborder="0"
+      width="100%"
+      height="100%"
+    ></iframe>
+    <div class="main">
+    <div id="horse1" class="horse standRight horseRight">
+      <div class="rider">
+        <div class="head"></div>
+
+        <div class="body"></div>
+      </div>
+    </div>
+
+    <div id="horse2" class="horse standRight">
+      <div class="rider">
+        <div class="head"></div>
+
+        <div class="body"></div>
+      </div>
+    </div>
+
+    <div id="horse3" class="horse standRight">
+      <div class="rider">
+        <div class="head"></div>
+
+        <div class="body"></div>
+      </div>
+    </div>
+
+    <div id="horse4" class="horse standRight">
+      <div class="rider">
+        <div class="head"></div>
+
+        <div class="body"></div>
+      </div>
+    </div>
+
+    <div class="bet-main">
+      <div id="bet">
+        <p>You have <span id="funds">100</span></p>
+        <label>Bet Amount (£)</label>
+        <input type="number" value="1" id="amount" />
+        <label>Laps</label>
+        <input type="number" value="1" id="laps" />
+        <label>Bet on horse:</label>
+        <select id="bethorse">
+          <option value="horse1">Blue</option>
+          <option value="horse2">Green</option>
+          <option value="horse3">Purple</option>
+          <option value="horse4">Red</option>
+        </select>
+      </div>
+      <button id="start">Start Race</button>
+    </div>
+    <div class="track">
+      <div id="startline"></div>
+      <div class="inner">
+        <table id="results">
+          <thead>
+            <tr>
+              <th>Results</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tr>
+            <td>1st</td>
+            <td class="horse1"></td>
+          </tr>
+          <tr>
+            <td>2nd</td>
+            <td class="horse2"></td>
+          </tr>
+          <tr>
+            <td>3rd</td>
+            <td class="horse3"></td>
+          </tr>
+          <tr>
+            <td>4th</td>
+            <td class="horse4"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+    <script src="game.js"></script>
+  </body>
+</html>

@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+body {
+  font-family: 'Staatliches', cursive;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+.main {
+  display: none;
+}
+
+.load {
+  /*change these sizes to fit into your project*/
+  width: 100px;
+  height: 100px;
+}
+.load hr {
+  border: 0;
+  margin: 0;
+  width: 40%;
+  height: 40%;
+  position: absolute;
+  border-radius: 50%;
+  animation: spin 2s ease infinite;
+}
+
+.load :first-child {
+  background: #ffffff;
+  animation-delay: -1.5s;
+}
+.load :nth-child(2) {
+  background: #ffffff;
+  animation-delay: -1s;
+}
+.load :nth-child(3) {
+  background: #ffffff;
+  animation-delay: -0.5s;
+}
+.load :last-child {
+  background: #ffffff;
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(160%);
+  }
+  50% {
+    transform: translate(160%, 160%);
+  }
+  75% {
+    transform: translate(0, 160%);
+  }
+}
+
+.center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#closeside {
+  float: right;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.character {
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  display: block;
+}
+
+.tree {
+  float: right;
+  margin-top: 2vh;
+  margin-right: 5vw;
+}
+
+#opponent {
+  left: 500px;
+  top: 500px;
+}
+
+.track {
+  border-style: solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  border-collapse: separate;
+  display: table;
+  border-width: 1px;
+  color: white;
+  position: absolute;
+  height: 80vh;
+  width: 80vw;
+}
+
+.track .inner {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-collapse: separate;
+  display: table;
+  border: 1px solid rgb(255, 255, 255);
+  width: 60vw;
+  height: 50vh;
+}
+
+#startline {
+  background-image: url(./images/Namnlöst-1.png);
+  background-repeat: no-repeat;
+  background-size: 2vw 7.3vw;
+  position: absolute;
+  margin-left: 20vw;
+  margin-top: 65vh;
+}
+
+#horse1 {
+  width: 20px;
+  height: 20px;
+  background-color: #3498db;
+  position: absolute;
+  top: 75vh;
+  z-index: 999;
+}
+
+#horse2 {
+  position: absolute;
+  top: 79vh;
+  z-index: 999;
+  width: 20px;
+  height: 20px;
+  background-color: #5edb34;
+}
+
+#horse3 {
+  position: absolute;
+  top: 83vh;
+  z-index: 999;
+  width: 20px;
+  height: 20px;
+  background-color: #c834db;
+}
+
+#horse4 {
+  position: absolute;
+  top: 87vh;
+  z-index: 999;
+  width: 20px;
+  height: 20px;
+  background-color: #db3434;
+}
+
+.horse {
+  left: 27vw;
+}
+
+#start {
+  font-family: 'Staatliches', cursive;
+  padding: 1vw;
+  background-color: transparent;
+  border: none;
+  padding: 12px 42px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  outline-offset: 4px;
+  border: 1.5px solid white;
+  color: white;
+  cursor: pointer;
+}
+
+#start:hover {
+  color: #000;
+}
+
+.bet-main {
+  padding: 2em;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+}
+
+#bet {
+  font-size: 1.2rem;
+  width: 20vw;
+  color: rgb(0, 0, 0);
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(255, 255, 255);
+  overflow: auto;
+}
+
+#bet p {
+  margin: auto;
+  font-size: 2rem;
+}
+
+#funds {
+  font-weight: bold;
+}
+#funds:before {
+  content: '£';
+}
+
+label,
+input,
+select {
+  color: black;
+  float: left;
+  display: block;
+  width: 8vw;
+  margin-bottom: 0.5vh;
+}
+label {
+  clear: left;
+}
+
+#results {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: auto;
+  position: absolute;
+  font-size: 1.5rem;
+  border: 1px solid white;
+  padding: 1vw;
+
+  color: rgb(255, 255, 255);
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(255, 255, 255);
+}
+#results td {
+  height: 30px;
+  width: 30px;
+  background-repeat: no-repeat;
+  background-position: 0px -64px;
+}
+#results .horse1 {
+  height: 20px;
+  background-color: #3498db;
+}
+#results .horse2 {
+  height: 20px;
+  background-color: #5edb34;
+}
+#results .horse3 {
+  height: 20px;
+  background-color: #c834db;
+}
+#results .horse4 {
+  height: 20px;
+  background-color: #db3434;
+}

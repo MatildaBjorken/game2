@@ -6,24 +6,23 @@ function loaded() {
     document.querySelector('.main').style.display = 'block';
   }, 1000);
 }
-
 //Horse no. and their original position
 var horseProp = [
   {
     no: 1,
-    OriginTop: 72,
+    OriginTop: 70,
   },
   {
     no: 2,
-    OriginTop: 76,
+    OriginTop: 74,
   },
   {
     no: 3,
-    OriginTop: 84,
+    OriginTop: 78,
   },
   {
     no: 4,
-    OriginTop: 86,
+    OriginTop: 82,
   },
 ];
 
@@ -57,7 +56,7 @@ document.getElementById('start').onclick = function () {
     //Following two class functions are for animation
     horse.classList.add('runRight');
     horse.classList.remove('standRight');
-    horseProp[horseNo].left = 25;
+    horseProp[horseNo].left = 40;
     horseProp[horseNo].laps = laps;
     moveRight(horse, horseNo);
     horseNo++;
@@ -69,16 +68,16 @@ function moveRight(horse, horseNo) {
     horseProp[horseNo].left++;
     horse.style.left = horseProp[horseNo].left + 'vw';
     if (horseProp[horseNo].laps > 0) {
-      if (horseProp[horseNo].left < 80 + horseNo * 2.5) {
+      if (horseProp[horseNo].left < 85 + horseNo * 2.5) {
         moveRight(horse, horseNo);
       } else {
-        horseProp[horseNo].top = 70 + (horseNo + 1) * 4;
+        horseProp[horseNo].top = 65 + (horseNo + 1) * 4;
         horse.classList.remove('runRight');
         horse.classList.add('runUp');
         moveUp(horse, horseNo);
       }
     } else {
-      if (horseProp[horseNo].left < 30) {
+      if (horseProp[horseNo].left < 40) {
         moveRight(horse, horseNo);
       } else {
         arrival(horse, horseNo);
@@ -91,7 +90,7 @@ function moveUp(horse, horseNo) {
   setTimeout(() => {
     horseProp[horseNo].top--;
     horse.style.top = horseProp[horseNo].top + 'vh';
-    if (horseProp[horseNo].top > 10 + horseNo * 4) {
+    if (horseProp[horseNo].top > 15 + horseNo * 4) {
       moveUp(horse, horseNo);
     } else {
       horse.classList.remove('runUp');
@@ -105,7 +104,7 @@ function moveLeft(horse, horseNo) {
   setTimeout(() => {
     horseProp[horseNo].left--;
     horse.style.left = horseProp[horseNo].left + 'vw';
-    if (horseProp[horseNo].left > 10 + horseNo * 2.5) {
+    if (horseProp[horseNo].left > 25 + horseNo * 2.5) {
       moveLeft(horse, horseNo);
     } else {
       horse.classList.remove('runLeft');
@@ -119,7 +118,7 @@ function moveDown(horse, horseNo) {
   setTimeout(() => {
     horseProp[horseNo].top++;
     horse.style.top = horseProp[horseNo].top + 'vh';
-    if (horseProp[horseNo].top < 75 + horseNo * 4) {
+    if (horseProp[horseNo].top < 70 + horseNo * 4) {
       moveDown(horse, horseNo);
     } else {
       horseProp[horseNo].laps--;

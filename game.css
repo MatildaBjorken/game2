@@ -5,8 +5,10 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
+  background-color: #8FCD98;
 }
-.main {
+
+.main{
   display: none;
 }
 
@@ -68,7 +70,6 @@ body {
 
 #closeside {
   float: right;
-  font-weight: bold;
   cursor: pointer;
 }
 
@@ -94,16 +95,16 @@ body {
   border-style: solid;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 60%;
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
   border-collapse: separate;
   display: table;
-  border-width: 1px;
+  border-width: 2px;
   color: white;
   position: absolute;
-  height: 80vh;
-  width: 80vw;
+  height: 70vh;
+  width: 70vw;
 }
 
 .track .inner {
@@ -112,10 +113,9 @@ body {
   top: 50%;
   left: 50%;
   border-collapse: separate;
-  display: table;
-  border: 1px solid rgb(255, 255, 255);
-  width: 60vw;
-  height: 50vh;
+  border: 2px solid rgb(255, 255, 255);
+  width: 50vw;
+  height: 40vh;
 }
 
 #startline {
@@ -130,44 +130,45 @@ body {
 #horse1 {
   width: 20px;
   height: 20px;
-  background-color: #3498db;
+  background-color: #898989;
   position: absolute;
-  top: 75vh;
+  top: 70vh;
   z-index: 999;
 }
 
 #horse2 {
   position: absolute;
-  top: 79vh;
+  top: 74vh;
   z-index: 999;
   width: 20px;
   height: 20px;
-  background-color: #5edb34;
+  background-color: #e38c4e;
 }
 
 #horse3 {
   position: absolute;
-  top: 83vh;
+  top: 78vh;
   z-index: 999;
   width: 20px;
   height: 20px;
-  background-color: #c834db;
+  background-color: #f7ff61;
 }
 
 #horse4 {
   position: absolute;
-  top: 87vh;
+  top: 82vh;
   z-index: 999;
   width: 20px;
   height: 20px;
-  background-color: #db3434;
+  background-color: #f44e4e;
 }
 
 .horse {
-  left: 27vw;
+  left: 40vw;
 }
 
 #start {
+  margin-top: 1em;
   font-family: 'Staatliches', cursive;
   padding: 1vw;
   background-color: transparent;
@@ -179,6 +180,8 @@ body {
   border: 1.5px solid white;
   color: white;
   cursor: pointer;
+  -webkit-box-shadow: 4px 4px 7px rgba(239, 190, 121, 0.868);
+  box-shadow: 4px 4px 7px rgba(239, 190, 121, 0.868);
 }
 
 #start:hover {
@@ -200,6 +203,7 @@ body {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgb(255, 255, 255);
   overflow: auto;
+  
 }
 
 #bet p {
@@ -207,40 +211,80 @@ body {
   font-size: 2rem;
 }
 
-#funds {
-  font-weight: bold;
-}
 #funds:before {
   content: '£';
 }
 
-label,
-input,
-select {
-  color: black;
-  float: left;
-  display: block;
-  width: 8vw;
-  margin-bottom: 0.5vh;
+
+input {
+  background-color: transparent;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: none;
+  padding: 5px 5px;
+  border-bottom: 1.5px solid rgb(255, 255, 255);
+  box-shadow: none;
 }
-label {
-  clear: left;
+input:invalid {
+  outline: 0;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  top: -30px;
+  color: white;
+  font-size: var(--font-size-small);
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+th {
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: normal;
+  text-align: -internal-center;
+}
+
+#bethorse{
+  display: block;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  padding: .5em;
+  width: 100%;
+  max-width: 100%; 
+  margin: 0;
+  border: 1.5px solid rgb(255, 255, 255);
+  box-shadow: none;
+  border-radius: 0em;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent
 }
 
 #results {
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
   width: auto;
-  position: absolute;
-  font-size: 1.5rem;
-  border: 1px solid white;
+  font-size: 1.7rem;
+  border: 1.5px solid white;
   padding: 1vw;
-
+  margin-top: 1em;
   color: rgb(255, 255, 255);
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgb(255, 255, 255);
+  -webkit-box-shadow: 4px 4px 7px rgba(239, 190, 121, 0.868);
+  box-shadow: 4px 4px 7px rgba(239, 190, 121, 0.868);
 }
 #results td {
   height: 30px;
@@ -250,17 +294,17 @@ label {
 }
 #results .horse1 {
   height: 20px;
-  background-color: #3498db;
+  background-color: #898989;
 }
 #results .horse2 {
   height: 20px;
-  background-color: #5edb34;
+  background-color: #e38c4e;
 }
 #results .horse3 {
   height: 20px;
-  background-color: #c834db;
+  background-color: #f7ff61;
 }
 #results .horse4 {
   height: 20px;
-  background-color: #db3434;
+  background-color: #f44e4e;
 }

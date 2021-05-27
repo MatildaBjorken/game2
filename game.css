@@ -5,10 +5,10 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-color: #8FCD98;
+  background-color: #8fcd98;
 }
 
-.main{
+.main {
   display: none;
 }
 
@@ -184,10 +184,6 @@ body {
   box-shadow: 4px 4px 7px rgba(239, 190, 121, 0.868);
 }
 
-#start:hover {
-  color: #000;
-}
-
 .bet-main {
   padding: 2em;
   position: absolute;
@@ -198,15 +194,14 @@ body {
 #bet {
   font-size: 1.2rem;
   width: 20vw;
-  color: rgb(0, 0, 0);
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgb(255, 255, 255);
+  color: white;
   overflow: auto;
-  
 }
 
 #bet p {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(255, 255, 255);
   margin: auto;
   font-size: 2rem;
 }
@@ -215,8 +210,9 @@ body {
   content: '£';
 }
 
-
 input {
+  font-size: 1rem;
+  font-family: 'Staatliches', cursive;
   background-color: transparent;
   width: 100%;
   border: none;
@@ -225,18 +221,11 @@ input {
   padding: 5px 5px;
   border-bottom: 1.5px solid rgb(255, 255, 255);
   box-shadow: none;
+  color: white;
 }
 input:invalid {
   outline: 0;
 }
-
-input:focus ~ label,
-input:valid ~ label {
-  top: -30px;
-  color: white;
-  font-size: var(--font-size-small);
-}
-
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -256,13 +245,14 @@ th {
   text-align: -internal-center;
 }
 
-#bethorse{
+#bethorse {
+  font-family: 'Staatliches', cursive;
   display: block;
   font-size: 16px;
   color: rgb(255, 255, 255);
-  padding: .5em;
+  padding: 0.5em;
   width: 100%;
-  max-width: 100%; 
+  max-width: 100%;
   margin: 0;
   border: 1.5px solid rgb(255, 255, 255);
   box-shadow: none;
@@ -270,7 +260,7 @@ th {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  background-color: transparent
+  background-color: transparent;
 }
 
 #results {

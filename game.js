@@ -1,13 +1,12 @@
 document.getElementById('testiframe').addEventListener('load', loaded);
-
 function loaded() {
   setTimeout(function () {
     document.getElementById('loader').style.display = 'none';
     document.querySelector('.main').style.display = 'block';
   }, 1000);
 }
-//Horse no. and their original position
-var horseProp = [
+
+let horseProp = [
   {
     no: 1,
     OriginTop: 70,
@@ -28,6 +27,9 @@ var horseProp = [
 
 let bethorse, amount, funds; //Global variables
 
+let highScores = localStorage.getItem('theMONEY') || '2500';
+console.log(highScores, 'eee');
+document.getElementById('funds').innerText = highScores;
 //Trigger the following when "start" button is clicked
 document.getElementById('start').onclick = function () {
   //Get the values from the DOM
@@ -36,6 +38,10 @@ document.getElementById('start').onclick = function () {
   laps = parseInt(document.getElementById('laps').value);
   funds = parseInt(document.getElementById('funds').innerText);
 
+  localStorage.setItem('theMONEY', funds);
+  let highScores = localStorage.getItem('theMONEY');
+  console.log(highScores);
+  document.getElementById('funds').innerText = highScores;
   //Basic input validation
   if (amount > funds) {
     alert('You do not have enough funds.');
@@ -49,9 +55,9 @@ document.getElementById('start').onclick = function () {
   }
 
   hideResult();
-  var horses = document.getElementsByClassName('horse');
+  let horses = document.getElementsByClassName('horse');
   //Running Animation and actual movement for every horse
-  var horseNo = 0; //Starting from horse #0
+  let horseNo = 0; //Starting from horse #0
   for (const horse of horses) {
     //Following two class functions are for animation
     horse.classList.add('runRight');
@@ -133,11 +139,14 @@ function moveDown(horse, horseNo) {
 function hideResult() {
   document.getElementById('start').disabled = true;
   //
-  var resultIcons = document.querySelectorAll('tr td:nth-child(2)');
-  for (var i = 0; i < resultIcons.length; i++) {
+  let resultIcons = document.querySelectorAll('tr td:nth-child(2)');
+  for (let i = 0; i < resultIcons.length; i++) {
     resultIcons[i].className = 'results';
   }
 }
+
+//window.localStorage.setItem('money', funds);
+//window.localStorage.getItem('money');
 
 function arrival(horse, horseNo) {
   horse.classList.remove('runRight');
@@ -153,6 +162,11 @@ function arrival(horse, horseNo) {
     } else {
       funds -= amount;
     }
-    document.getElementById('funds').innerText = funds;
+    localStorage.setItem('theMONEY', funds);
+    const highScores = localStorage.getItem('theMONEY');
+    console.log(highScores);
+    document.getElementById('funds').innerText = highScores;
+    //document.getElementById('funds').innerText = highScores
   }
 }
+

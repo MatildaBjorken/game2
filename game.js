@@ -29,7 +29,7 @@ let bethorse, amount, funds; //Global variables
 
 let highScores = localStorage.getItem('theMONEY') || '2500';
 console.log(highScores, 'eee');
-document.getElementById('funds').innerText = highScores;
+document.getElementById('funds').innerText = highScores + ' kr';
 //Trigger the following when "start" button is clicked
 document.getElementById('start').onclick = function () {
   //Get the values from the DOM
@@ -41,7 +41,7 @@ document.getElementById('start').onclick = function () {
   localStorage.setItem('theMONEY', funds);
   let highScores = localStorage.getItem('theMONEY');
   console.log(highScores);
-  document.getElementById('funds').innerText = highScores;
+  document.getElementById('funds').innerText = highScores  + ' kr';
   //Basic input validation
   if (amount > funds) {
     alert('You do not have enough funds.');
@@ -165,8 +165,9 @@ function arrival(horse, horseNo) {
     localStorage.setItem('theMONEY', funds);
     const highScores = localStorage.getItem('theMONEY');
     console.log(highScores);
-    document.getElementById('funds').innerText = highScores;
+    document.getElementById('funds').innerText = highScores  + ' kr';
     //document.getElementById('funds').innerText = highScores
   }
 }
 
+//localStorage.clear();

@@ -206,10 +206,6 @@ body {
   font-size: 2rem;
 }
 
-#funds:before {
-  content: '£';
-}
-
 input {
   font-size: 1rem;
   font-family: 'Staatliches', cursive;
